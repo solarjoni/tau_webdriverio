@@ -1,0 +1,24 @@
+{
+  "name": "tau_webdriverio",
+  "version": "1.0.0",
+  "description": "This is a WebdriverIO tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "solarjoni",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/dot-reporter": "latest",
+    "@wdio/local-runner": "latest",
+    "@wdio/mocha-framework": "latest",
+    "@wdio/selenium-standalone-service": "latest",
+    "@wdio/spec-reporter": "latest",
+    "chai": "latest",
+    "chai-webdriverio": "latest",
+    "webdriverio": "latest"
+  },
+  "dependencies": {
+    "@wdio/cli": "latest"
+  }
+}
