@@ -8,6 +8,7 @@ class Internet {
     async specificChildElement(index) { return this.parent.$(`li:nth-child(${index})`) }
     get firstLink() { return $('ul li:nth-child(1) a')}
     async link(index) { return $(`ul li:nth-child(${index}) a`) }
+    
     /**
      * Clicks on link index
      * @param {Number} index the index of the element 
@@ -47,6 +48,54 @@ class Internet {
         await psswrd.setValue(text);
     }
     
+    async figures(index) { return $(`.example .figure:nth-child(${index}) img`) }
+    async figureDetails(index) {return $(`.example .figure:nth-child(${index}) .figcaption h5`) }
+    
+    /**
+     * Hovers over the specified image
+     * @param {Nnumber} index the specific index of the image 
+     */
+    async hoverOnFigure(index) {
+        let fgr = await this.figures(index);
+        await fgr.waitForDisplayed();
+        await fgr.moveTo(1,1);
+    };
+
+    /**
+     * Returns the text of the figure details
+     * @param {Number} index the index of the element
+     */
+    async getHoverDetailsText(index) {
+        let txt = await this.figureDetails(index);
+        await txt.waitForDisplayed();
+        return await txt.getText();
+    };
+
+    get target() { return $('.example #target') }
+    get result() { return $('.example #result') }
+
+    /**
+     * Clicks the target imput field
+     */
+    async clickTarget() {
+        await this.target.waitForDisplayed();
+        await this.target.click();
+    };
+
+    /**
+     * Send keyboard keys to target
+     * @param {String} text The keyboard text to enter
+     */
+    async sendKeysToTarget(text) {
+        await this.target.waitForDisplayed();
+        await this.target.keys(text);
+    };
+
+    async getResultText() {
+        await this.result.waitForDisplayed();
+        return await this.result.getText();
+    };
+
     async getLiText() {
         await this.childElements.filter(async (element) => {
             console.log("li element: " + await element.getText());
