@@ -125,6 +125,30 @@ class Internet {
         await element.waitForDisplayed();
         return await element.getText();
     }
+
+    get hereLink() { return $('.example a') };
+    
+    /**
+     * Click the "Click Here" link
+     */
+    async clickHereLink() {
+        await this.hereLink.waitForDisplayed();
+        await this.hereLink.click();
+    };
+
+    get iframeBody () { return $('#tinymce') }
+    get iframe () { return $('.tox-edit-area #mce_0_ifr') }
+
+    /**
+     * Enter text into the iframe body
+     * @param {String} text the text to be entered 
+     */
+    async sendTextToIframeBody(text) {
+        await this.iframeBody.waitForDisplayed();
+        await this.iframeBody.clearValue();
+        await this.iframeBody.click();
+        await this.iframeBody.keys(text);
+    };
 }
 
 module.exports = new Internet();
