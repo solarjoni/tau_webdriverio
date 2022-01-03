@@ -149,6 +149,33 @@ class Internet {
         await this.iframeBody.click();
         await this.iframeBody.keys(text);
     };
+
+    get columnA() { return $('#column-a') }
+    get columnB() { return $('#column-b') }
+    get columnAHeader() { return $('#column-a header') }
+    get columnBHeader() { return $('#column-b header') }
+
+    /**
+     * Drag box A to box B
+     */
+    async dragColumnAToColumnB() {
+        await this.columnA.waitForDisplayed();
+        //await this.columnB.waitForDisplayed();
+        await this.columnA.moveTo(1,1);
+        await this.columnA.dragAndDrop(await this.columnB);
+    };
+
+    get draggable() { return $('#draggable') }
+    get droppable() { return $('#droppable') }
+    get droppableParagraph() { return $('#droppable p') }
+    
+    /**
+     * Drag and drop
+     */
+    async dragDraggableToDroppable() {
+        await this.draggable.waitForDisplayed();
+        await this.draggable.dragAndDrop(await this.droppable);
+    }
 }
 
 module.exports = new Internet();
