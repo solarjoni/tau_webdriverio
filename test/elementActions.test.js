@@ -4,7 +4,7 @@ const internetPage = require("./pageobjects/internet.page");
 describe("Test element actions", async () => {
     it("should click element", async () => {
         await browser.url('/'); //goto default url
-        await internetPage.clickOnLink();
+        await internetPage.clickFirstLink();
         let url = await browser.getUrl();
         // console.log("url is : " + url);
         await expect(url).equals('https://the-internet.herokuapp.com/abtest');

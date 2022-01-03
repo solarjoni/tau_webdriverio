@@ -9,6 +9,14 @@ class Internet {
     get firstLink() { return $('ul li:nth-child(1) a')}
     async link(index) { return $(`ul li:nth-child(${index}) a`) }
     
+    async clickFirstLink() {
+        if(await this.firstLink.isDisplayed()) {
+            await this.firstLink.click();
+        };
+        //await browser.pause(5000);
+        await this.h3Header.waitForDisplayed();
+    }
+
     /**
      * Clicks on link index
      * @param {Number} index the index of the element 
@@ -18,6 +26,15 @@ class Internet {
         await selectedLink.waitForDisplayed();
         await selectedLink.click();
     }
+
+    /**
+     * Scrolls to page footer
+     */
+    async moveToPageFooter() {
+        //await this.pageFooter.scrollIntoView();
+        await this.pageFooter.moveTo();
+    };
+
     async checkboxes(index) { return $(`#checkboxes input:nth-child(${index})`) }
     
     async clickCheckbox(index) {
@@ -34,18 +51,19 @@ class Internet {
      * @param {String} text username to be entered 
      */
     async enterUsername(text) {
-        let uname = await this.username;
-        await uname.waitForDisplayed();
-        await uname.setValue(text);
+        //let uname = await this.username;
+        await this.username.waitForDisplayed();
+        await this.username.setValue(text);
     }
+    
     /**
      * Enter the password into the field
      * @param {String} text password to be entered 
      */
     async enterPassword(text) {
-        let psswrd = await this.password;
-        await psswrd.waitForDisplayed();
-        await psswrd.setValue(text);
+        //let psswrd = await this.password;
+        await this.password.waitForDisplayed();
+        await this.password.setValue(text);
     }
     
     async figures(index) { return $(`.example .figure:nth-child(${index}) img`) }
@@ -106,14 +124,6 @@ class Internet {
         let element = await this.specificChildElement(index);
         await element.waitForDisplayed();
         return await element.getText();
-    }
-
-    async clickOnLink() {
-        if(await this.firstLink.isDisplayed()) {
-            await this.firstLink.click();
-        };
-        //await browser.pause(5000);
-        await this.h3Header.waitForDisplayed();
     }
 }
 

@@ -30,6 +30,6 @@ describe("Interacting with element", async () => {
     });
 
     it("Click Element", async () => {
-        await internetPage.clickOnLink();
+        await internetPage.clickFirstLink();
     });
 });
