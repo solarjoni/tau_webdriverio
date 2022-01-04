@@ -219,6 +219,20 @@ class Internet {
         await this.enableButton.waitForDisplayed();
         await this.enableButton.click();
     };
+
+    get exampleButton() { return $('.example button') }
+    async deleteButton(index) { return $(`#elements button:nth-child(${index})`) }
+
+    async clickExampleButton() {
+        await this.exampleButton.waitForDisplayed();
+        await this.exampleButton.click();
+    };
+
+    async clickDeleteButton(index) {
+        let bttn = await this.deleteButton(index)
+        await bttn.waitForDisplayed();
+        await bttn.click();
+    };
 }
 
 module.exports = new Internet();
