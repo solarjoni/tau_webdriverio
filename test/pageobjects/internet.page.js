@@ -233,6 +233,12 @@ class Internet {
         await bttn.waitForDisplayed();
         await bttn.click();
     };
+
+    get pageButton() { return $('#checkbox-example button') }
+    async clickPageButton() {
+        await this.pageButton.waitForDisplayed();
+        await this.pageButton.click();
+    }
 }
 
 module.exports = new Internet();
