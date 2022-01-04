@@ -1,3 +1,4 @@
+const logindata = require("../../data/logindata");
 const internetPage = require("../pageobjects/internet.page");
 
 describe("Test element actions", async () => {
@@ -33,15 +34,15 @@ describe("Test element actions", async () => {
     it("should enter username", async () => {
         //await browser.url(`${browser.options.baseUrl}/login`);
         await browser.url('/login');
-        await internetPage.enterUsername('Antoin');
-        await assert.equal(await internetPage.username.getValue(), 'Antoin');
+        await internetPage.enterUsername(logindata.userName);
+        await assert.equal(await internetPage.username.getValue(), logindata.userName);
     });
 
     it("should enter password", async () => {
         await browser.url(`${browser.options.baseUrl}/login`);
         //await browser.url('/login');
-        await internetPage.enterPassword('secret');
-        assert.equal(await internetPage.password.getValue(), 'secret');
+        await internetPage.enterPassword(logindata.password);
+        assert.equal(await internetPage.password.getValue(), logindata.password);
     });
 
     it("should clear value", async () => {
