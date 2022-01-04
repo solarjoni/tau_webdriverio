@@ -6,6 +6,8 @@ describe("Wait for Enabled/Disabled", async () => {
         await internetPage.clickEnableButton();
         await internetPage.inputEnabledField.waitForEnabled(4000);
         assert.equal(await internetPage.inputEnabledField.isEnabled(), true);
+        await browser.pause(3000);
+        await browser.debug();
     });
 
     it("should wait for the input field to be disabled", async () => {
