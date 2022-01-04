@@ -1,4 +1,4 @@
-const internetPage = require("./pageobjects/internet.page");
+const internetPage = require("../pageobjects/internet.page");
 
 describe("Test element actions", async () => {
     it("should click element", async () => {

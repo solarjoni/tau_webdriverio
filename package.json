@@ -4,7 +4,8 @@
   "description": "This is a WebdriverIO tutorial",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/.bin/wdio ./wdio.conf.js"
+    "test": "node ./node_modules/.bin/wdio ./wdio.conf.js",
+    "actions": "./node_modules/.bin/wdio ./wdio.conf.js --suite actions"
   },
   "author": "solarjoni",
   "license": "ISC",
