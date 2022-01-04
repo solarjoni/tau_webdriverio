@@ -208,6 +208,17 @@ class Internet {
         await bttn.waitForDisplayed();
         await bttn.click();
     }
+
+    get enableButton() { return $('#input-example button') }
+    get inputEnabledField() { return $('#input-example input')}
+
+    /**
+     * Click the Enable/Disable Button
+     */
+    async clickEnableButton() {
+        await this.enableButton.waitForDisplayed();
+        await this.enableButton.click();
+    };
 }
 
 module.exports = new Internet();
