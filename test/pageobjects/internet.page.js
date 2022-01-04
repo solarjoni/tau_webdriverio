@@ -196,6 +196,18 @@ class Internet {
         await this.dropdownMenuOption2.waitForDisplayed();
         await this.dropdownMenuOption2.click();
     };
+
+    async jsAlertButton(index) { return $(`.example li:nth-child(${index}) button`) }
+
+    /**
+     * Click javascript alert button based on the index
+     * @param {Number} index the index of the element 
+     */
+    async clickJsAlertButton(index) {
+        let bttn = await this.jsAlertButton(index); 
+        await bttn.waitForDisplayed();
+        await bttn.click();
+    }
 }
 
 module.exports = new Internet();
