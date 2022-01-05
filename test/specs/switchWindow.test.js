@@ -1,4 +1,4 @@
-const internetPage = require("./pageobjects/internet.page");
+const internetPage = require("./../pageobjects/internet.page");
 
 describe("Switch Window", async () => {
     it("should switch to the next window", async () => {

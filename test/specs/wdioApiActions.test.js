@@ -1,4 +1,4 @@
-const internetPage = require("../pageobjects/internet.page");
+const internetPage = require("./../pageobjects/internet.page");
 
 describe('WebdriverIO API Actions', async () => {
     it('should hover on figure 1', async () => {

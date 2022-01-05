@@ -1,13 +1,11 @@
 //Page.js
 
-export default class Page {
-    constructor() {
-        title = 'My page'
-    }
-
+class Page {
     async open (path) {
         //await browser.url(`${browser.options.baseUrl}/${path}`)
         await browser.url(path)
 
     }
 }
+
+module.exports = Page

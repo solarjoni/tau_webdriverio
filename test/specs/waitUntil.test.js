@@ -1,4 +1,4 @@
-const internetPage = require("./pageobjects/internet.page");
+const internetPage = require("./../pageobjects/internet.page");
 
 describe("WaitUntil",  async () => {
     it("should wait until the button text changes to Add", async () => {

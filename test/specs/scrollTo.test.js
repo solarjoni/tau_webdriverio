@@ -1,4 +1,4 @@
-const internetPage = require("./pageobjects/internet.page");
+const internetPage = require("./../pageobjects/internet.page");
 
 describe("Scroll to the Element", async () => {
     it("should move to the footer(out of bounds)", async () => {
