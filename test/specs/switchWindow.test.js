@@ -1,4 +1,3 @@
-const { assert } = require("chai");
 const internetPage = require("./pageobjects/internet.page");
 
 describe("Switch Window", async () => {
