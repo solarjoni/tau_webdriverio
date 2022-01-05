@@ -1,4 +1,4 @@
-const internetPage = require("./pageobjects/internet.page");
+const internetPage = require("./../pageobjects/internet.page");
 
 describe("Wait for Exist", async () => {
 

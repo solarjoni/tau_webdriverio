@@ -1,5 +1,4 @@
-const { assert } = require("chai");
-const internetPage = require("./pageobjects/internet.page");
+const internetPage = require("./../pageobjects/internet.page");
 
 describe("Javascript Alerts", async () => {
     it("should get the text of an alert", async () => {

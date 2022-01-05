@@ -1,4 +1,4 @@
-const internetPage = require("./pageobjects/internet.page");
+const internetPage = require("./../pageobjects/internet.page");
 
 describe("Wait for Enabled/Disabled", async () => {
     it("should wait for the input field to be enabled", async () => {
@@ -7,7 +7,7 @@ describe("Wait for Enabled/Disabled", async () => {
         await internetPage.inputEnabledField.waitForEnabled(4000);
         assert.equal(await internetPage.inputEnabledField.isEnabled(), true);
         await browser.pause(3000);
-        await browser.debug();
+        //await browser.debug();
     });
 
     it("should wait for the input field to be disabled", async () => {
